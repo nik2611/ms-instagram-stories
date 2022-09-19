@@ -1,13 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const db = require("./app/models/");
+const dotenv = require("dotenv");
+const db = require("./models/");
 
 //configuration
 const app = express();
+dotenv.config();
 
 var corsOptions = {
-  origin: process.env.CORS
+  origin: "http://localhost:8081"
 };
 
 db.sequelize.sync() //Synced sequelize
@@ -18,10 +20,8 @@ db.sequelize.sync() //Synced sequelize
     console.log("Failed to sync db: " + err.message);
   });
 
-  db.sequelize.sync({ force: true }).then(() => { //For resyncing after dropping tables
-    console.log("Drop and re-sync db.");
-  });
 
+  
 //Middlewares
 app.use(cors(corsOptions));
 
@@ -31,12 +31,14 @@ app.use(express.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+
+
 //Routes
-require("./app/routes/instaStories.routes")(app);
+require("./routes/instaStories.routes")(app);
 
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 7002;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

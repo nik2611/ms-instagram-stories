@@ -10,7 +10,7 @@ if (!req.body.userName) {
     res.status(400).send({
       message: "Content can not be empty!"
     });
-    return;
+    
   }
 
   // Create a InstaStory

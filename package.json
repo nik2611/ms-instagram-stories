@@ -2,10 +2,10 @@
   "name": "ms_instagram-stories_ursa_tep_online_full-time_2022_1",
   "version": "1.0.0",
   "description": "# Learning competencies:",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,9 +19,12 @@
   "homepage": "https://github.com/exponentsoftware/MS_Instagram-stories_Ursa_Tep_Online_Full-time_2022_1#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "nodemon": "^2.0.20",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.21.6"
+    "postgres": "^3.2.4",
+    "sequelize": "^6.23.0"
   }
 }
