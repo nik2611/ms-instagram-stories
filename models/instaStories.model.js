@@ -7,7 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       video: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING
       }
     });
   
