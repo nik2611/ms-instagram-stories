@@ -17,7 +17,7 @@ if (!req.body.userName) {
   const instaStory = {
     userName: req.body.userName,
     bio: req.body.bio,
-    video: req.body.video ? req.body.video : false
+    video: req.body.video
   };
 
   // Save InstaStory in the database
