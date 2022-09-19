@@ -141,7 +141,7 @@ exports.deleteAll = (req, res) => {
 
 // Find all stories with videos
 exports.findAllVideos = (req, res) => {
-    InstaStory.findAll({ where: { video: true } })
+    InstaStory.findAll()
     .then(data => {
       res.send(data);
     })
