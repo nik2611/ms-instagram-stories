@@ -4,7 +4,7 @@ module.exports = app => {
     var router = require("express").Router();
   
     // Create a new InstaStory
-    router.post("/", instaStories.create);
+    router.post("/create", instaStories.create);
   
     // Retrieve all InstaStories
     router.get("/", instaStories.findAll);
@@ -21,7 +21,7 @@ module.exports = app => {
     // Delete a InstaStory with id
     router.delete("/:id", instaStories.delete);
   
-    // Create a new InstaStory
+    // Delete all InstaStories
     router.delete("/", instaStories.deleteAll);
   
     app.use('/api/instaStories', router);
