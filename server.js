@@ -9,7 +9,7 @@ const app = express();
 dotenv.config();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:19006"
 };
 
 db.sequelize.sync() //Synced sequelize
@@ -23,7 +23,7 @@ db.sequelize.sync() //Synced sequelize
 
   
 //Middlewares
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
