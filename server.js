@@ -9,7 +9,7 @@ const app = express();
 dotenv.config();
 
 var corsOptions = {
-  origin: "http://localhost:19006"
+  origin: "http://localhost:3000"
 };
 
 db.sequelize.sync() //Synced sequelize
